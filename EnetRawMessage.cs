@@ -1,4 +1,6 @@
 ﻿using GameCommon.MemoryUtils;
+using System;
+using System.Runtime.InteropServices;
 using Unity.Collections.LowLevel.Unsafe;
 
 namespace EnetWrappers
@@ -18,7 +20,7 @@ namespace EnetWrappers
 
             EnetRawMessage message = new EnetRawMessage
             {
-                Data = (byte*)RpMalloc.Malloc(length),
+                Data = (byte*)Marshal.AllocHGlobal(length),
                 Length = length,
                 Channel = channel,
                 MessageType = messageType,
@@ -33,7 +35,7 @@ namespace EnetWrappers
         {
             if (Data != null)
             {
-                RpMalloc.Free(Data);
+                Marshal.FreeHGlobal((IntPtr)Data);
                 Data = null;
             }
         }
