@@ -5,7 +5,7 @@ Simple wrappers over https://github.com/nxrighthere/ENet-CSharp.
 Adds a bit more abstraction to keep things that need to be customized for client and server separate from the core.
 
 Connection management uses a flow where the server sets a client as authenticated (ConnectionManager.SetAuthenticated).  Say via
-an out of band https request.  Client connect sends an auth token, and then on connect that's authenticated against the set clientid/authtoken pair
+an out of band https request.  Client connect sends an auth token, and then on connect that's authenticated against the clientid/authtoken pair
 set previously by the server.
 
 There is a separate client id in addition to the peer id, the connection manager allows for looking up the connection by either.
