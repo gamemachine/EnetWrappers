@@ -18,7 +18,7 @@ EnetChannel is 3 types that are used by EnetMessageSender.  So channel usage is 
 
 EnetMessageSender has built in handling for the following
 
-- Raw messages are just that raw byte arrays.
+- Raw messages are raw byte arrays or byte*.
 
 - Values types send any unmanaged type using unsafe pointers as is.  For say IPC where you are optimizing for time rather then space.
 
