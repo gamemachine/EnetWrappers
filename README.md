@@ -28,6 +28,9 @@ EnetMessageSender has built in handling for the following
 EnetRawMessage/EnetValueMessage<T> are for when you want to create messages in a different flow, say in a bursted job.  And then later
  submit them to enet to send.
  
+ EnetRawMessage you will likely want to modify to use a different allocator. This came from a game using RpMalloc, I subsituted that for Marshal.AllocHGlobal.
+ Unity's NativeArray<byte> works well here also.
+ 
  ExampleProtoStream shows how to implement IEnetProtoStream.
 
 
