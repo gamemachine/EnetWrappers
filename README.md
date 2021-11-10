@@ -17,11 +17,11 @@ EnetChannel is 3 types that are used by EnetMessageSender.  So channel usage is 
 
 EnetMessageSender has built in handling for the following
 
-Raw messages are just that raw byte arrays.
+- Raw messages are just that raw byte arrays.
 
-Values types send any unmanaged type using unsafe pointers as is.  For say IPC where you are optimizing for time rather then space.
+- Values types send any unmanaged type using unsafe pointers as is.  For say IPC where you are optimizing for time rather then space.
 
-Protocol buffer support.  Abstractions that reuse the same stream and prepend a message header.
+- Protocol buffer support.  Abstractions that reuse the same stream and prepend a message header.
 
 
 EnetRawMessage/EnetValueMessage<T> are for when you want to create messages in a different flow, say in a bursted job.  And then later
