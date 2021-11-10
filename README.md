@@ -3,6 +3,7 @@
 Simple wrappers over https://github.com/nxrighthere/ENet-CSharp.
 
 Adds a bit more abstraction to keep things that need to be customized for client and server separate from the core.
+This uses System.Buffers, so if you are on Unity you will need to add that.
 
 Connection management uses a flow where the server sets a client as authenticated (ConnectionManager.SetAuthenticated).  Say via
 an out of band https request.  Client connect sends an auth token, and then on connect that's authenticated against the clientid/authtoken pair
@@ -13,7 +14,7 @@ There is a separate client id in addition to the peer id, the connection manager
 IEnetEventHandler for event handling.
 IEnetLogger for logging.
 
-EnetChannel is 3 types that are used by EnetMessageSender.  So channel usage is opinionated to some extent.
+EnetChannel is 3 types that are used by EnetMessageSender.  So channel usage is opinionated to some extent.  
 
 EnetMessageSender has built in handling for the following
 
@@ -26,6 +27,8 @@ EnetMessageSender has built in handling for the following
 
 EnetRawMessage/EnetValueMessage<T> are for when you want to create messages in a different flow, say in a bursted job.  And then later
  submit them to enet to send.
+ 
+ ExampleProtoStream shows how to implement IEnetProtoStream.
 
 
 
