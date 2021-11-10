@@ -8,18 +8,8 @@ namespace EnetWrappers
 {
     public unsafe class EnetHost
     {
-        // Topology
-        // game client -> server
-        // game client -> unity server
-        // main server client -> unity server
-
-        // main server client runs on game client in test mode
-
+       
         private static List<EnetHost> Hosts = new List<EnetHost>();
-
-        public const int MainServerPort = 8160;
-        public const int UnityServerPort = 8161;
-        public const int IpcPort = 8162;
 
         public const int DefaultBufferSize = 1024 * 1024;
 
